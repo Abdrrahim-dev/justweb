@@ -3,6 +3,15 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+:root {
+  --first-clr: #ff0000;
+  --second-clr: #950101;
+  --third-clr: #3d0000;
+  --fourth-clr: #000;
+  --first-font: "Poppins", sans-serif;
+  --second-font: "Playball", cursive;
 }
 body {
   position: relative;
@@ -28,6 +37,25 @@ body {
     width: 920px;
   }
 }
+.background {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.background video {
+  min-width: 100%;
+  position: relative;
+  opacity: 0.3;
+}
+button {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
 /* start header */
 header {
   position: fixed;
@@ -35,6 +63,8 @@ header {
   left: 0;
   width: 100%;
   border-bottom: 1px solid #fff;
+  z-index: 999;
+  background-color: #000;
 }
 header .container {
   display: flex;
@@ -88,3 +118,162 @@ header nav a:hover i {
   top: 8px;
 }
 /* end header */
+/* start templates */
+.templates {
+  padding: 172px 0 0;
+  position: relative;
+}
+h2 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 60px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  position: relative;
+  width: fit-content;
+  font-family: var(--second-font);
+}
+h2 span {
+  color: #f00;
+  font-size: 80px;
+  font-family: var(--second-font);
+}
+h2::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #f00;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+p {
+  margin-left: 50px;
+  color: #ffffff84;
+  font-weight: 400;
+  margin-bottom: 70px;
+}
+.templates .t-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-rows: repeat(auto-fill, 350px);
+  gap: 40px;
+  justify-content: center;
+  padding: 0 50px;
+}
+.templates .t-container .card {
+  width: 300px;
+  height: 350px;
+  border: 1px solid #fff;
+}
+/* end templates */
+/* start contact */
+.contact {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.contact .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact form {
+  padding: 50px;
+  border-radius: 5px;
+  border: 1px solid var(--third-clr);
+  box-shadow: 0 0 3px var(--third-clr), 0 0 5px var(--third-clr),
+    0 0 10px var(--third-clr), 0 0 20px var(--third-clr),
+    0 0 40px var(--third-clr);
+  width: fit-content;
+  background-color: #000;
+  color: #fff;
+}
+.contact form .input-container {
+  position: relative;
+  width: 300px;
+  margin-bottom: 42px;
+}
+.contact form .input-container input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  caret-color: #fff;
+}
+.contact form .input-container label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #ffffffa1;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.contact form .input-container input:focus + label,
+.contact form .input-container input:valid + label {
+  top: -22px;
+  left: 0;
+}
+.contact form textarea {
+  width: 300px;
+  height: 150px;
+  padding: 15px;
+  resize: vertical;
+  border-radius: 4px;
+}
+.contact form textarea:focus {
+  outline: 2px solid var(--first-clr);
+}
+.contact form input[type="submit"] {
+  width: 150px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: var(--first-clr);
+  display: block;
+  margin: 30px auto 0;
+  cursor: pointer;
+}
+.contact .social-contact {
+  display: flex;
+  padding: 50px;
+  border-radius: 5px;
+  border: 1px solid var(--third-clr);
+  box-shadow: 0 0 3px var(--third-clr), 0 0 5px var(--third-clr),
+    0 0 10px var(--third-clr), 0 0 20px var(--third-clr),
+    0 0 40px var(--third-clr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+.contact .social-contact a {
+  color: #fff;
+  font-size: 40px;
+  transition: 0.3s;
+}
+.contact .social-contact a:hover {
+  color: var(--second-clr);
+}
+
+/* end contact */
+/* start footer */
+footer {
+  background-color: #000;
+  border-top: 1px solid #fff;
+}
+footer .container {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 18px;
+  color: #fff;
+}
+footer .container span {
+  color: var(--second-clr);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+/* end footer */
