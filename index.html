@@ -73,7 +73,7 @@
       <h2><span>C</span>ontact</h2>
       <p>Text us anytimes</p>
       <div class="container">
-        <form action="#" method="get">
+        <form action="emailSend.php" method="post">
           <div class="input-container">
             <input type="text" name="first-name" id="first-name" required />
             <label for="first-name">First name</label>
@@ -91,7 +91,7 @@
             id="message"
             placeholder="Your message here.."
           ></textarea>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send" name="send" />
         </form>
         <div class="social-contact">
           <a href="#"><i class="fa-brands fa-tiktok"></i></a>
